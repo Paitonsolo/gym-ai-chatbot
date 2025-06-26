@@ -6,7 +6,7 @@ st.title("🏋️‍♂️ Gym Chat Coach")
 st.write("Ask me anything about lifting, nutrition, recovery, or gym advice.")
 
 # 🔑 Replace this with your actual OpenAI API key
-openai.api_key = "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"
+openai.api_key = "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"
 
 # Input box
 user_input = st.text_input("Your question:")
