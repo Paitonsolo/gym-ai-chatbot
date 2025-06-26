@@ -1,0 +1,23 @@
+import openai
+import streamlit as st
+
+st.set_page_config(page_title="Gym Chat Coach")
+st.title("🏋️‍♂️ Gym Chat Coach")
+st.write("Ask me anything about lifting, nutrition, recovery, or gym advice.")
+
+# 🔑 Replace this with your actual OpenAI API key
+openai.api_key = "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"
+
+# Input box
+user_input = st.text_input("Your question:")
+
+# Generate a response if the user types something
+if user_input:
+    response = openai.ChatCompletion.create(
+        model="gpt-4",  # or "gpt-3.5-turbo"
+        messages=[
+            {"role": "system", "content": "You are a certified personal trainer and expert in fitness, weightlifting, nutrition, and recovery. Give helpful and motivating answers."},
+            {"role": "user", "content": user_input}
+        ]
+    )
+    st.write("💬 " + response.choices[0].message["content"])
